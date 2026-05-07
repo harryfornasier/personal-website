@@ -3,9 +3,8 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Personal website — writing, projects, photography and whatever else catches my eye">
-  <meta name="keywords" content="personal site, blog, articles, photography, Mac OS X">
-  <title>Harry's Site</title>
+  <meta name="description" content="Mam Tor at sunrise — Peak District 2024">
+  <title>Mam Tor at sunrise — Harry's Site</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -22,9 +21,9 @@
 
   <!-- ═══ NAVIGATION ═══ -->
   <div id="navbar">
-    <a class="nav-btn active" href="index.html">Home</a>
+    <a class="nav-btn" href="index.html">Home</a>
     <a class="nav-btn" href="articles.html">Articles</a>
-    <a class="nav-btn" href="gallery.html">Gallery</a>
+    <a class="nav-btn active" href="gallery.html">Gallery</a>
     <a class="nav-btn" href="about.html">About</a>
   </div>
 
@@ -35,9 +34,29 @@
     <div id="left-sidebar">
 
       <div class="sidebar-box">
-        <div class="sidebar-box-title">Recent Posts</div>
-        <!-- Populated by articles.js — shows the 5 latest article titles -->
-        <div class="sidebar-box-body" id="recent-posts-list"></div>
+        <div class="sidebar-box-title">Photo Info</div>
+        <div class="sidebar-box-body setup-list">
+          <b>Camera:</b> Olympus OM-1<br>
+          <b>Film:</b> Kodak Portra 400<br>
+          <b>Location:</b> Mam Tor<br>
+          <b>Date:</b> Oct 13, 2024<br>
+          <b>Time:</b> 6:42 AM
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Album</div>
+        <div class="sidebar-box-body">
+          <a class="sidebar-link" href="album.html">Peak District 2024</a>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Categories</div>
+        <div class="sidebar-box-body">
+          <a class="sidebar-link" href="#">Landscapes</a>
+          <a class="sidebar-link" href="#">Film Photography</a>
+        </div>
       </div>
 
       <div class="sidebar-box">
@@ -60,17 +79,6 @@
         </div>
       </div>
 
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">Currently</div>
-        <div class="sidebar-box-body setup-list">
-          <b>Reading:</b> Money: A story of Humanity<br>
-          <b>Listening:</b> Will Wood<br>
-          <b>OS:</b> Snow Leopard 10.6.8<br>
-          <b>Camera:</b> Pentax K1 MK II<br>
-          <b>Weather:</b> Overcast, 12&deg;C
-        </div>
-      </div>
-
       <div class="status-badges">
         <div class="badge-88 safari">Best viewed in <b>Safari</b></div>
         <div class="badge-88 osx">Powered by <b>Mac OS X</b></div>
@@ -81,29 +89,43 @@
     <!-- MAIN CONTENT -->
     <div id="main-content">
 
-      <!-- Welcome box -->
+      <!-- Photo -->
       <div class="content-box">
         <div class="box-title-bar">
-          <span>Welcome</span>
+          <span>Mam Tor at sunrise</span>
         </div>
         <div class="box-body">
-          <h2>Hi, I'm Harry</h2>
-          <p>This is a personal site, it's mainly going to be articles, photos and some projects with whatever I'm working on.</p>
-          <p>I'm going to write about old OS X versions like Snow Leopard and Mavericks, photography and networking. It may have some opinion pieces as well.</p>
-          <p>Check out my <a href="articles.html">articles</a>.</p>
-        </div>
-      </div>
 
-      <!-- Latest Articles — populated by articles.js -->
-      <div class="content-box">
-        <div class="box-title-bar">
-          <span>Latest Articles</span>
-        </div>
-        <div class="box-body">
-          <div id="latest-articles"></div>
-          <div class="view-all">
-            <a href="articles.html">View all articles &raquo;</a>
+          <p style="margin-bottom: 12px;">
+            <a href="album.html" style="font-size: 10px;">&larr; Back to Peak District 2024</a>
+          </p>
+
+          <div class="photo-viewer">
+
+            <div class="photo-main">
+              [photo]
+            </div>
+
+            <div class="photo-caption">
+              Mam Tor at sunrise. Got up at 5 AM to catch the light. Worth it.
+            </div>
+
+            <div class="photo-nav">
+              <a href="#">&larr; Previous</a>
+              <span style="font-size: 10px; color: #666666;">Photo 1 of 12</span>
+              <a href="#">Next &rarr;</a>
+            </div>
+
           </div>
+
+          <p style="margin-top: 16px; padding-top: 12px; border-top: 1px solid #cccccc;">
+            Shot this at sunrise on the second day of the trip. The weather forecast said it would be cloudy all weekend but we got lucky with a brief window of clear sky. Had to hike up in the dark which was a bit sketchy but the view at the top made it worthwhile.
+          </p>
+
+          <p>
+            This was frame 8 on the roll. I bracketed a few shots but this one had the best balance between the sky and the foreground. Portra 400 handles the early morning light really well.
+          </p>
+
         </div>
       </div>
 
@@ -126,34 +148,6 @@
 
 </div><!-- /wrapper -->
 
-<script type="text/javascript" src="scripts/script.js"></script>
-<script type="text/javascript" src="scripts/articles.js"></script>
-<script type="text/javascript">
-
-/* ── Sidebar: 5 most recent post titles ── */
-(function () {
-  var list = document.getElementById('recent-posts-list');
-  if (!list || !ARTICLES) { return; }
-  var html = '';
-  var max = Math.min(5, ARTICLES.length);
-  for (var i = 0; i < max; i++) {
-    html += '<a class="sidebar-link" href="' + ARTICLES[i].href + '">' + ARTICLES[i].title + '</a>';
-  }
-  list.innerHTML = html;
-}());
-
-/* ── Main content: 3 most recent article cards ── */
-(function () {
-  var container = document.getElementById('latest-articles');
-  if (!container || !ARTICLES) { return; }
-  var html = '';
-  var max = Math.min(3, ARTICLES.length);
-  for (var i = 0; i < max; i++) {
-    html += articleCardHtml(ARTICLES[i]);
-  }
-  container.innerHTML = html;
-}());
-
-</script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

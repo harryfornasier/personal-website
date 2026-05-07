@@ -111,16 +111,16 @@ for f in "${IMAGES[@]}"; do
 
   THUMB_GRID="${THUMB_GRID}
             <a href=\"${ALBUM}_photo.html#${i}\" class=\"photo-thumb\">
-              <img src=\"${FOLDER}/thumbs/${STEM}.jpg\" alt=\"Photo ${i}\">
+              <img src=\"../${FOLDER}/thumbs/${STEM}.jpg\" alt=\"Photo ${i}\">
             </a>"
 
   COMMA=$( [ $i -lt $COUNT ] && echo "," || echo "" )
   PHOTOS_JS="${PHOTOS_JS}
   {
-    src:     '${FOLDER}/medium/${STEM}.jpg',
+    src:     '../${FOLDER}/medium/${STEM}.jpg',
     title:   'Photo ${i} — edit this title',
     caption: 'Caption for photo ${i} — edit this',
-    desc:    'Description for photo ${i}. Open ${ALBUM}_photo.html and fill in the desc field for each photo in the array at the bottom of the page.'
+    desc:    'Description for photo ${i}. Open photos/${ALBUM}_photo.html and fill in the desc field for each photo in the array at the bottom of the page.'
   }${COMMA}"
 
   i=$((i + 1))
@@ -128,7 +128,7 @@ done
 
 # ── Write album grid page ─────────────────────────────────────
 
-cat > "${ALBUM}.html" << ENDOFFILE
+cat > "photos/${ALBUM}.html" << ENDOFFILE
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
   "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -136,7 +136,7 @@ cat > "${ALBUM}.html" << ENDOFFILE
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="${TITLE}">
   <title>${TITLE} -- Harry's Site</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 
@@ -150,10 +150,10 @@ cat > "${ALBUM}.html" << ENDOFFILE
   </div>
 
   <div id="navbar">
-    <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="articles.html">Articles</a>
-    <a class="nav-btn active" href="gallery.html">Gallery</a>
-    <a class="nav-btn" href="about.html">About</a>
+    <a class="nav-btn" href="../index.html">Home</a>
+    <a class="nav-btn" href="../articles.html">Articles</a>
+    <a class="nav-btn active" href="../gallery.html">Gallery</a>
+    <a class="nav-btn" href="../about.html">About</a>
   </div>
 
   <div id="columns">
@@ -204,7 +204,7 @@ cat > "${ALBUM}.html" << ENDOFFILE
         <div class="box-body">
 
           <p style="margin-bottom: 8px;">
-            <a href="gallery.html" style="font-size: 10px;">&larr; Back to albums</a>
+            <a href="../gallery.html" style="font-size: 10px;">&larr; Back to albums</a>
           </p>
 
           <p style="margin-bottom: 12px;">${DESC}</p>
@@ -222,7 +222,7 @@ ${THUMB_GRID}
   <div id="footer">
     &copy; 2006&ndash;2024 Harry &nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="about.html">About</a>&nbsp;
+    &nbsp;<a href="../about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="#">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
@@ -233,12 +233,12 @@ ${THUMB_GRID}
 
 </div><!-- /wrapper -->
 
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../scripts/script.js"></script>
 </body>
 </html>
 ENDOFFILE
 
-echo "Created ${ALBUM}.html"
+echo "Created photos/${ALBUM}.html"
 
 # ── Write photo viewer page ───────────────────────────────────
 # Write directly to file with cat — avoids the newline-stripping and
@@ -250,7 +250,7 @@ echo "Created ${ALBUM}.html"
 # The JS variables (p.src, photos.length, etc.) don't use $ syntax so
 # they are not affected.
 
-cat > "${ALBUM}_photo.html" << ENDOFFILE
+cat > "photos/${ALBUM}_photo.html" << ENDOFFILE
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
   "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -258,7 +258,7 @@ cat > "${ALBUM}_photo.html" << ENDOFFILE
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="${TITLE} — photo viewer">
   <title>${TITLE} -- Harry's Site</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
 
@@ -272,10 +272,10 @@ cat > "${ALBUM}_photo.html" << ENDOFFILE
   </div>
 
   <div id="navbar">
-    <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="articles.html">Articles</a>
-    <a class="nav-btn active" href="gallery.html">Gallery</a>
-    <a class="nav-btn" href="about.html">About</a>
+    <a class="nav-btn" href="../index.html">Home</a>
+    <a class="nav-btn" href="../articles.html">Articles</a>
+    <a class="nav-btn active" href="../gallery.html">Gallery</a>
+    <a class="nav-btn" href="../about.html">About</a>
   </div>
 
   <div id="columns">
@@ -360,7 +360,7 @@ cat > "${ALBUM}_photo.html" << ENDOFFILE
   <div id="footer">
     &copy; 2006&ndash;2024 Harry &nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="about.html">About</a>&nbsp;
+    &nbsp;<a href="../about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="#">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
@@ -371,7 +371,7 @@ cat > "${ALBUM}_photo.html" << ENDOFFILE
 
 </div><!-- /wrapper -->
 
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../scripts/script.js"></script>
 <script type="text/javascript">
 /* ── PHOTO DATA ──────────────────────────────────────────────
    Edit the title, caption and desc for each photo below.
@@ -433,7 +433,7 @@ showPhoto(getStartIndex());
 </html>
 ENDOFFILE
 
-echo "Created ${ALBUM}_photo.html"
+echo "Created photos/${ALBUM}_photo.html"
 
 # ── Print the gallery.html card snippet ───────────────────────
 
@@ -442,7 +442,7 @@ echo "================================================================"
 echo " Done! One step left: add this card to gallery.html"
 echo "================================================================"
 echo ""
-echo "            <a href=\"${ALBUM}.html\" class=\"album-card\">"
+echo "            <a href=\"photos/${ALBUM}.html\" class=\"album-card\">"
 echo "              <div class=\"album-thumb\" style=\"background-image: url('${FIRST_THUMB}');\"></div>"
 echo "              <div class=\"album-info\">"
 echo "                <div class=\"album-title\">${TITLE}</div>"
@@ -451,7 +451,7 @@ echo "              </div>"
 echo "            </a>"
 echo ""
 echo "================================================================"
-echo " Then open ${ALBUM}_photo.html and fill in the captions"
+echo " Then open photos/${ALBUM}_photo.html and fill in the captions"
 echo " and descriptions in the photos array at the bottom."
 echo "================================================================"
 echo ""
