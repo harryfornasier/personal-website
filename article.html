@@ -35,6 +35,11 @@
       </div>
 
       <div class="sidebar-box">
+        <div class="sidebar-box-title">Categories</div>
+        <div class="sidebar-box-body" id="categories-list"></div>
+      </div>
+
+      <div class="sidebar-box">
         <div class="sidebar-box-title">Links</div>
         <div class="sidebar-box-body">
           <a class="sidebar-link" href="https://512pixels.net" target="_blank">512 Pixels</a>
@@ -93,6 +98,29 @@
 <script type="text/javascript" src="scripts/script.js"></script>
 <script type="text/javascript" src="scripts/articles.js"></script>
 <script type="text/javascript">
+
+/* ── Sidebar: categories (tags) from all articles ── */
+(function () {
+  var list = document.getElementById('categories-list');
+  if (!list || !ARTICLES) { return; }
+  var counts = {};
+  var order  = [];
+  for (var i = 0; i < ARTICLES.length; i++) {
+    var tags = ARTICLES[i].tags;
+    for (var j = 0; j < tags.length; j++) {
+      var tag = tags[j];
+      if (!counts[tag]) { counts[tag] = 0; order.push(tag); }
+      counts[tag]++;
+    }
+  }
+  order.sort();
+  var html = '';
+  for (var k = 0; k < order.length; k++) {
+    var t = order[k];
+    html += '<a class="sidebar-link" href="#">' + t + ' (' + counts[t] + ')</a>';
+  }
+  list.innerHTML = html || '<span style="color:#999;font-size:11px;">No categories yet.</span>';
+}());
 
 /* ── Sidebar: 5 most recent post titles ── */
 (function () {

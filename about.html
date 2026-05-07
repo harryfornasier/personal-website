@@ -1,182 +1,274 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="About Harry — the person behind this site">
-  <title>About — Harry's Site</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta
+            name="description"
+            content="About Harry — the person behind this site"
+        />
+        <title>About — Harry's Site</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- ═══ HEADER ═══ -->
+            <div id="header">
+                <div id="header-inner">
+                    <div class="site-title">Harry<span>'s Site</span></div>
+                    <div class="site-subtitle">
+                        writing &middot; photography &middot; projects &middot;
+                        whatever else
+                    </div>
+                </div>
+            </div>
 
-<div id="wrapper">
+            <!-- ═══ NAVIGATION ═══ -->
+            <div id="navbar">
+                <a class="nav-btn" href="index.html">Home</a>
+                <a class="nav-btn" href="articles.html">Articles</a>
+                <a class="nav-btn" href="gallery.html">Gallery</a>
+                <a class="nav-btn active" href="about.html">About</a>
+            </div>
 
-  <!-- ═══ HEADER ═══ -->
-  <div id="header">
-    <div id="header-inner">
-      <div class="site-title">Harry<span>'s Site</span></div>
-      <div class="site-subtitle">writing &middot; photography &middot; projects &middot; whatever else</div>
-    </div>
-  </div>
+            <!-- ═══ TWO-COLUMN LAYOUT ═══ -->
+            <div id="columns">
+                <!-- LEFT SIDEBAR -->
+                <div id="left-sidebar">
+                    <div class="sidebar-box">
+                        <div class="sidebar-box-title">Quick Facts</div>
+                        <div class="sidebar-box-body setup-list">
+                            <b>Name:</b> Harry<br />
+                            <b>Location:</b> UK<br />
+                            <b>Day job:</b> IT<br />
+                            <b>OS:</b> Snow Leopard<br />
+                            <b>Camera:</b> Pentax K1 MkII<br />
+                            <b>Since:</b> 2026
+                        </div>
+                    </div>
 
-  <!-- ═══ NAVIGATION ═══ -->
-  <div id="navbar">
-    <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="articles.html">Articles</a>
-    <a class="nav-btn" href="gallery.html">Gallery</a>
-    <a class="nav-btn active" href="about.html">About</a>
-  </div>
+                    <div class="sidebar-box">
+                        <div class="sidebar-box-title">My Setup</div>
+                        <div class="sidebar-box-body setup-list">
+                            <b>Computer:</b> MacBook Pro<br />
+                            2011, i7<br />
+                            8GB RAM, SSD<br />
+                            <br />
+                            <b>Browser:</b> Powerfox<br />
+                            <b>Editor:</b> TextMate 1.5<br />
+                            <b>Music:</b> iTunes 10
+                        </div>
+                    </div>
 
-  <!-- ═══ TWO-COLUMN LAYOUT ═══ -->
-  <div id="columns">
+                    <div class="sidebar-box">
+                        <div class="sidebar-box-title">Links</div>
+                        <div class="sidebar-box-body">
+                            <a
+                                class="sidebar-link"
+                                href="https://512pixels.net"
+                                target="_blank"
+                                >512 Pixels</a
+                            >
+                            <a
+                                class="sidebar-link"
+                                href="https://lowendmac.com"
+                                target="_blank"
+                                >Low End Mac</a
+                            >
+                            <a
+                                class="sidebar-link"
+                                href="https://kottke.org"
+                                target="_blank"
+                                >Kottke.org</a
+                            >
+                            <a
+                                class="sidebar-link"
+                                href="https://macstories.net"
+                                target="_blank"
+                                >MacStories</a
+                            >
+                            <a class="sidebar-link" href="#" target="_blank"
+                                >My GitHub</a
+                            >
+                        </div>
+                    </div>
 
-    <!-- LEFT SIDEBAR -->
-    <div id="left-sidebar">
+                    <div class="sidebar-box">
+                        <div class="sidebar-box-title">Visitors</div>
+                        <div
+                            class="sidebar-box-body"
+                            style="text-align: center"
+                        >
+                            <div class="counter-label">You are visitor #</div>
+                            <div class="hit-counter" id="counter">012847</div>
+                            <div class="counter-since">since Jan 2006</div>
+                        </div>
+                    </div>
 
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">Quick Facts</div>
-        <div class="sidebar-box-body setup-list">
-          <b>Name:</b> Harry<br>
-          <b>Location:</b> UK<br>
-          <b>Day job:</b> Software<br>
-          <b>OS:</b> Snow Leopard<br>
-          <b>Camera:</b> Olympus OM-1<br>
-          <b>Since:</b> 2006
+                    <div class="status-badges">
+                        <div class="badge-88 safari">
+                            Best viewed in <b>Safari</b>
+                        </div>
+                        <div class="badge-88 osx">
+                            Powered by <b>Mac OS X</b>
+                        </div>
+                    </div>
+                </div>
+                <!-- /left-sidebar -->
+
+                <!-- MAIN CONTENT -->
+                <div id="main-content">
+                    <!-- About -->
+                    <div class="content-box">
+                        <div class="box-title-bar">
+                            <span>About Me</span>
+                        </div>
+                        <div class="box-body">
+                            <h2>Hi, I'm Harry</h2>
+
+                            <p>
+                                I’m a massive nerd based in the UK. I wanted to
+                                start this website as a place to put down my
+                                thoughts on technology. I was quite inspired by
+                                Jonathan Allens website dedicated to OS X
+                                Mavericks and want to do something similar but
+                                for Snow Leopard.
+                            </p>
+
+                            <p>
+                                My main interests are old Macs, photography,
+                                digital privacy servers and networking. Which I
+                                will write about in the Article section. To be
+                                completely upfront, this website style was
+                                created using Claude but all the content and
+                                text you see is my own.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- The Computer -->
+                    <div class="content-box">
+                        <div class="box-title-bar">
+                            <span>Snow Leopard</span>
+                        </div>
+                        <div class="box-body">
+                            <p>
+                                Now you may be asking “why on earth would you
+                                want to use snow leopard in 2026”. And, reader
+                                than is a great question, which I intend to
+                                answer. My main reason is that I strongly
+                                believe the aqua interface was a work of art –
+                                it’s hard to say if it’s just nostalgia and it’s
+                                because that’s what I grew up with but I think
+                                there’s something there.
+                            </p>
+
+                            <p>
+                                Whenever I use a Mac with the aqua interface
+                                it’s a pleasure to use, everything felt
+                                intentional from a usability sense. There is no
+                                simplicity for the point of simplicity, the OS
+                                isn’t trying to hide scroll bars from you
+                                because some manager on the UX team at apple
+                                thinks they look ugly. The Finder has some
+                                colour in it – and no not the disaster that are
+                                themes on Mac OS Tahoe.
+                            </p>
+
+                            <p>
+                                I’m choosing to go with Snow Leopard not because
+                                of the “greatest release” theory that lots of
+                                Apple fans have but more because of it’s design
+                                that was actually lost after this release. From
+                                10.7 onwards the lovely aqua scroll bars and
+                                other aqua buttons were swapped out for more
+                                generic looking ones. My theory was if I wanted
+                                the proper aqua interface I’d have to go with
+                                Snow leopard.
+                            </p>
+
+                            <p>
+                                This was a summary of my decision for Snow
+                                Leopard. I’ll go into more detail in articles
+                                about Applications I use and how I still get
+                                modern things done on this OS.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- The Camera -->
+                    <div class="content-box">
+                        <div class="box-title-bar">
+                            <span>The Computer</span>
+                        </div>
+                        <div class="box-body">
+                            <p>
+                                The desktop I’m using is a Mid 2012 Mac Pro with
+                                a 6 core xeon processor. Technically this is
+                                post Snow Leopard support, but there are ways to
+                                make it run on this as the 2009 – 2012 Mac Pros
+                                are all quite similar. My laptop of choice is
+                                the Macbook Pro 2011 13” i7 2.7. It was the last
+                                laptop to come with Snow Leopard and has
+                                integrated intel graphics, which I desired since
+                                the dedicated graphics chips in the 15” and 17”
+                                have a tendency to kick the bucket.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="content-box">
+                        <div class="box-title-bar">
+                            <span>Contact</span>
+                        </div>
+                        <div class="box-body">
+                            <p>
+                                The best way to get in touch is by email. You
+                                can find my address on my
+                                <a href="#">GitHub profile</a>.
+                            </p>
+
+                            <p>
+                                I'm not on Twitter, Instagram, or any other
+                                social network. This site is it.
+                            </p>
+
+                            <p
+                                style="
+                                    margin-top: 14px;
+                                    padding-top: 10px;
+                                    border-top: 1px solid #cccccc;
+                                    font-size: 11px;
+                                    color: #666666;
+                                "
+                            >
+                                This site has no analytics, no tracking, and no
+                                cookies. Just as God intended.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /main-content -->
+            </div>
+            <!-- /columns -->
+
+            <!-- ═══ FOOTER ═══ -->
+            <div id="footer">
+                &copy; 2006&ndash;2024 Harry &nbsp;
+                <span class="footer-divider">|</span>
+                &nbsp;<a href="about.html">About</a>&nbsp;
+                <span class="footer-divider">|</span>
+                &nbsp;<a href="#">Contact</a>&nbsp;
+                <span class="footer-divider">|</span>
+                &nbsp;<a href="#">RSS</a>&nbsp;
+                <br />
+                <span class="footer-small"
+                    >No cookies &middot; No tracking &middot; No nonsense</span
+                >
+            </div>
         </div>
-      </div>
+        <!-- /wrapper -->
 
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">My Setup</div>
-        <div class="sidebar-box-body setup-list">
-          <b>Computer:</b> MacBook Pro<br>
-          2009, Core 2 Duo<br>
-          8GB RAM, SSD<br>
-          <br>
-          <b>Browser:</b> Safari 5.1<br>
-          <b>Editor:</b> TextMate 1.5<br>
-          <b>Music:</b> iTunes 10
-        </div>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">Links</div>
-        <div class="sidebar-box-body">
-          <a class="sidebar-link" href="https://512pixels.net" target="_blank">512 Pixels</a>
-          <a class="sidebar-link" href="https://lowendmac.com" target="_blank">Low End Mac</a>
-          <a class="sidebar-link" href="https://kottke.org" target="_blank">Kottke.org</a>
-          <a class="sidebar-link" href="https://macstories.net" target="_blank">MacStories</a>
-          <a class="sidebar-link" href="#" target="_blank">My GitHub</a>
-        </div>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">Visitors</div>
-        <div class="sidebar-box-body" style="text-align:center;">
-          <div class="counter-label">You are visitor #</div>
-          <div class="hit-counter" id="counter">012847</div>
-          <div class="counter-since">since Jan 2006</div>
-        </div>
-      </div>
-
-      <div class="status-badges">
-        <div class="badge-88 safari">Best viewed in <b>Safari</b></div>
-        <div class="badge-88 osx">Powered by <b>Mac OS X</b></div>
-      </div>
-
-    </div><!-- /left-sidebar -->
-
-    <!-- MAIN CONTENT -->
-    <div id="main-content">
-
-      <!-- About -->
-      <div class="content-box">
-        <div class="box-title-bar">
-          <span>About Me</span>
-        </div>
-        <div class="box-body">
-
-          <h2>Hi, I'm Harry</h2>
-
-          <p>I'm a software developer based in the UK. I've been running this site in one form or another since 2006 — it started as a place to dump links and has slowly turned into something more like an actual blog. Still not entirely sure what it is. That's fine by me.</p>
-
-          <p>My main interests are old Mac OS X, film photography, and cooking. They don't have much in common except that I find all three more satisfying than their modern equivalents. There's a theme there if you squint.</p>
-
-        </div>
-      </div>
-
-      <!-- The Computer -->
-      <div class="content-box">
-        <div class="box-title-bar">
-          <span>The Computer</span>
-        </div>
-        <div class="box-body">
-
-          <p>My main machine is a 2009 MacBook Pro running Mac OS X Snow Leopard 10.6.8. It has 8GB of RAM and an aftermarket SSD, which makes it feel genuinely quick for almost everything I do day to day.</p>
-
-          <p>I know that sounds eccentric. It isn't, really. Snow Leopard is fast, stable, and has a UI that makes sense. The software I use — TextMate, Safari 5, iTunes 10, iWork '09 — does everything I need without any of the cruft that's accumulated in modern equivalents.</p>
-
-          <p>I keep a newer Mac around for the occasional thing that won't run on Snow Leopard. That machine gets used maybe once a week. The old MBP gets used every day.</p>
-
-          <p>This site itself is written in plain HTML 4.01 and CSS. No CMS, no frameworks, no build tools. Just files in a folder. It's served from a basic host and has worked fine for nearly twenty years.</p>
-
-        </div>
-      </div>
-
-      <!-- The Camera -->
-      <div class="content-box">
-        <div class="box-title-bar">
-          <span>The Camera</span>
-        </div>
-        <div class="box-body">
-
-          <p>I shoot film on an Olympus OM-1 — a fully mechanical 35mm SLR from the early 1970s. It needs no batteries to operate (a small battery only powers the light meter). If the electronics in modern cameras are going to rot in 20 years, the OM-1 will still be working fine.</p>
-
-          <p>My usual films are Kodak Portra 400 for colour and Ilford HP5 for black and white. I develop my own black and white film at home, which I'd recommend to anyone who hasn't tried it — it's cheaper than you'd think and surprisingly straightforward.</p>
-
-          <p>The constraint of 36 exposures per roll forces you to slow down and think before you shoot. That's not a limitation — it's the point.</p>
-
-          <p>You can see my photos in the <a href="gallery.html">gallery</a>.</p>
-
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="content-box">
-        <div class="box-title-bar">
-          <span>Contact</span>
-        </div>
-        <div class="box-body">
-
-          <p>The best way to get in touch is by email. You can find my address on my <a href="#">GitHub profile</a>.</p>
-
-          <p>I'm not on Twitter, Instagram, or any other social network. This site is it.</p>
-
-          <p style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #cccccc; font-size: 11px; color: #666666;">
-            This site has no analytics, no tracking, and no cookies. I have no idea who visits or how many people read anything here. That is deliberate.
-          </p>
-
-        </div>
-      </div>
-
-    </div><!-- /main-content -->
-
-  </div><!-- /columns -->
-
-  <!-- ═══ FOOTER ═══ -->
-  <div id="footer">
-    &copy; 2006&ndash;2024 Harry &nbsp;
-    <span class="footer-divider">|</span>
-    &nbsp;<a href="about.html">About</a>&nbsp;
-    <span class="footer-divider">|</span>
-    &nbsp;<a href="#">Contact</a>&nbsp;
-    <span class="footer-divider">|</span>
-    &nbsp;<a href="#">RSS</a>&nbsp;
-    <br>
-    <span class="footer-small">No cookies &middot; No tracking &middot; No nonsense</span>
-  </div>
-
-</div><!-- /wrapper -->
-
-<script type="text/javascript" src="scripts/script.js"></script>
-</body>
+        <script type="text/javascript" src="scripts/script.js"></script>
+    </body>
 </html>

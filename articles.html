@@ -35,14 +35,7 @@
 
       <div class="sidebar-box">
         <div class="sidebar-box-title">Categories</div>
-        <div class="sidebar-box-body">
-          <a class="sidebar-link" href="#">All Posts</a>
-          <a class="sidebar-link" href="#">Mac OS X</a>
-          <a class="sidebar-link" href="#">Photography</a>
-          <a class="sidebar-link" href="#">Cooking</a>
-          <a class="sidebar-link" href="#">Personal</a>
-          <a class="sidebar-link" href="#">Opinion</a>
-        </div>
+        <div class="sidebar-box-body" id="categories-list"></div>
       </div>
 
       <!-- Archive counts — populated by articles.js -->
@@ -83,7 +76,7 @@
 
       <div class="content-box">
         <div class="box-title-bar">
-          <span>All Articles</span>
+          <span id="articles-title">All Articles</span>
         </div>
         <div class="box-body">
 
@@ -122,50 +115,123 @@
 <script type="text/javascript" src="scripts/articles.js"></script>
 <script type="text/javascript">
 
-/* ── Full archive, grouped by year ── */
+/* ── Categories + archive (combined so filtering works) ── */
 (function () {
+  var catList  = document.getElementById('categories-list');
   var archive  = document.getElementById('articles-archive');
   var sidebar  = document.getElementById('archive-counts');
+  var titleEl  = document.getElementById('articles-title');
   if (!archive || !ARTICLES) { return; }
 
-  var archiveHtml = '';
-  var yearCounts  = {};   /* { '2024': 3, '2023': 2, ... } */
-  var yearOrder   = [];   /* years in the order first seen  */
-  var currentYear = '';
-
+  /* Build tag counts from all articles */
+  var tagCounts = {};
+  var tagOrder  = [];
   for (var i = 0; i < ARTICLES.length; i++) {
-    var a    = ARTICLES[i];
-    var year = a.dateiso.substring(0, 4);
-
-    /* track count per year for the sidebar */
-    if (!yearCounts[year]) {
-      yearCounts[year] = 0;
-      yearOrder.push(year);
+    var tags = ARTICLES[i].tags;
+    for (var j = 0; j < tags.length; j++) {
+      var tag = tags[j];
+      if (!tagCounts[tag]) { tagCounts[tag] = 0; tagOrder.push(tag); }
+      tagCounts[tag]++;
     }
-    yearCounts[year] += 1;
+  }
+  tagOrder.sort();
 
-    /* insert year header when the year changes */
-    if (year !== currentYear) {
-      var topMargin = (currentYear === '') ? '0' : '18px';
-      archiveHtml += '<h3 style="margin-top: ' + topMargin + '; margin-bottom: 10px;">' + year + '</h3>';
-      currentYear = year;
+  /* ── Render the article archive, optionally filtered by tag ── */
+  function renderArchive(activeTag) {
+    var archiveHtml = '';
+    var yearCounts  = {};
+    var yearOrder   = [];
+    var currentYear = '';
+
+    for (var i = 0; i < ARTICLES.length; i++) {
+      var a = ARTICLES[i];
+
+      /* Filter: skip articles that don't have the active tag */
+      if (activeTag !== null) {
+        var hasTag = false;
+        for (var j = 0; j < a.tags.length; j++) {
+          if (a.tags[j] === activeTag) { hasTag = true; break; }
+        }
+        if (!hasTag) { continue; }
+      }
+
+      var year = a.dateiso.substring(0, 4);
+      if (!yearCounts[year]) { yearCounts[year] = 0; yearOrder.push(year); }
+      yearCounts[year]++;
+
+      if (year !== currentYear) {
+        var topMargin = (currentYear === '') ? '0' : '18px';
+        archiveHtml += '<h3 style="margin-top:' + topMargin + ';margin-bottom:10px;">' + year + '</h3>';
+        currentYear = year;
+      }
+
+      archiveHtml += articleCardHtml(a);
     }
 
-    archiveHtml += articleCardHtml(a);
+    if (!archiveHtml) {
+      archiveHtml = '<p style="color:#999;font-style:italic;">No articles in this category yet.</p>';
+    }
+    archive.innerHTML = archiveHtml;
+
+    /* Update archive year counts to reflect filtered set */
+    if (sidebar) {
+      var countsHtml = '';
+      for (var k = 0; k < yearOrder.length; k++) {
+        var y = yearOrder[k];
+        var n = yearCounts[y];
+        countsHtml += '<a class="sidebar-link" href="#">' + y +
+          ' (' + n + ' post' + (n === 1 ? '' : 's') + ')</a>';
+      }
+      sidebar.innerHTML = countsHtml;
+    }
+
+    /* Update page title */
+    if (titleEl) {
+      titleEl.innerHTML = activeTag ? activeTag : 'All Articles';
+    }
+
+    /* Update active state on category links */
+    if (catList) {
+      var links = catList.getElementsByTagName('a');
+      for (var m = 0; m < links.length; m++) {
+        var linkTag = links[m].getAttribute('data-tag');
+        /* "All Posts" has data-tag="", active when activeTag is null */
+        var isActive = (linkTag === '' && activeTag === null) ||
+                       (linkTag === activeTag);
+        links[m].style.fontWeight = isActive ? 'bold' : 'normal';
+        links[m].style.color      = isActive ? '#333333' : '';
+      }
+    }
   }
 
-  archive.innerHTML = archiveHtml;
-
-  /* ── Sidebar archive counts ── */
-  if (sidebar) {
-    var countsHtml = '';
-    for (var j = 0; j < yearOrder.length; j++) {
-      var y = yearOrder[j];
-      var n = yearCounts[y];
-      countsHtml += '<a class="sidebar-link" href="#">' + y + ' (' + n + ' post' + (n === 1 ? '' : 's') + ')</a>';
+  /* ── Build the categories sidebar ── */
+  if (catList) {
+    var catHtml = '<a class="sidebar-link" href="#" data-tag="">All Posts (' + ARTICLES.length + ')</a>';
+    for (var t = 0; t < tagOrder.length; t++) {
+      var tg = tagOrder[t];
+      catHtml += '<a class="sidebar-link" href="#" data-tag="' + tg + '">' +
+        tg + ' (' + tagCounts[tg] + ')</a>';
     }
-    sidebar.innerHTML = countsHtml;
+    if (!tagOrder.length) {
+      catHtml = '<span style="color:#999;font-size:11px;">No categories yet.</span>';
+    }
+    catList.innerHTML = catHtml;
+
+    /* Wire up click handlers — IIFE captures `link` to avoid closure trap */
+    var links = catList.getElementsByTagName('a');
+    for (var n = 0; n < links.length; n++) {
+      (function (link) {
+        link.onclick = function () {
+          var clicked = this.getAttribute('data-tag');
+          renderArchive(clicked === '' ? null : clicked);
+          return false;
+        };
+      }(links[n]));
+    }
   }
+
+  /* Initial render — show all */
+  renderArchive(null);
 }());
 
 </script>
