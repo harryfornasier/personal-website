@@ -1,0 +1,569 @@
+/* ============================================================
+   Jamie's Site — style.css
+   Classic Mac personal site
+   Float-based layout (Safari 4/5 compatible)
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 12px;
+  /* Tiger Finder-inspired linen/canvas texture */
+  background-color: #b8b2a8;
+  background-image:
+    -webkit-repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.07) 0px,
+      rgba(255,255,255,0.07) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    -webkit-repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.07) 0px,
+      rgba(255,255,255,0.07) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.05) 0px,
+      rgba(0,0,0,0.05) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+  color: #000000;
+  min-height: 100vh;
+}
+
+a {
+  color: #0033cc;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #cc3300;
+}
+
+/* ── OUTER WRAPPER ── */
+#wrapper {
+  width: 780px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-left: 1px solid #888888;
+  border-right: 1px solid #888888;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+#header {
+  background: #e0ddd8;
+  border-bottom: 2px solid #aaaaaa;
+}
+
+#header-inner {
+  padding: 14px 16px 10px;
+}
+
+.site-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.site-title span {
+  color: #333333;
+}
+
+.site-subtitle {
+  font-size: 11px;
+  color: #555555;
+  font-style: italic;
+}
+
+/* ── NAVIGATION ── */
+#navbar {
+  background: #eeeeee;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 5px 8px;
+  /* overflow:hidden clears floats if any child floats */
+  overflow: hidden;
+}
+
+/*
+ * -webkit-appearance: button tells Safari/WebKit to render this
+ * anchor as a native OS button — glossy Aqua on Snow Leopard,
+ * whatever the current OS gives you on modern systems.
+ */
+.nav-btn {
+  -webkit-appearance: button;
+  appearance: button;
+  display: inline-block;
+  padding: 2px 16px;
+  margin-right: 3px;
+  font-family: Verdana, sans-serif;
+  font-size: 11px;
+  color: #000000;
+  text-decoration: none;
+  cursor: default;
+}
+
+.nav-btn.active {
+  font-weight: bold;
+}
+
+/* ── TWO-COLUMN LAYOUT ──
+ * Float-based — flex/grid are not supported in Safari 4/5.
+ * overflow:hidden on the parent acts as a clearfix.
+ */
+#columns {
+  overflow: hidden;
+}
+
+/* ── LEFT SIDEBAR ── */
+#left-sidebar {
+  float: left;
+  width: 162px;
+  padding: 10px 8px;
+  border-right: 1px solid #cccccc;
+  background: #f0efec;
+  /* min-height keeps the border visible even with short content */
+  min-height: 100%;
+}
+
+.sidebar-box {
+  border: 1px solid #999999;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.sidebar-box-title {
+  /* A touch of classic Aqua blue */
+  background: #5580b0;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 6px;
+}
+
+.sidebar-box-body {
+  padding: 6px;
+  font-size: 10.5px;
+  color: #000000;
+  line-height: 1.65;
+}
+
+.setup-list {
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.sidebar-link {
+  display: block;
+  color: #0033cc;
+  text-decoration: none;
+  padding: 2px 0;
+  border-bottom: 1px dotted #cccccc;
+  font-size: 10.5px;
+}
+
+.sidebar-link:last-child {
+  border-bottom: none;
+}
+
+.sidebar-link:hover {
+  color: #cc3300;
+  text-decoration: underline;
+}
+
+/* Single-colon for broadest Safari compat */
+.sidebar-link:before {
+  content: '\25B8 ';
+  color: #666666;
+}
+
+/* Hit counter */
+.counter-label {
+  font-size: 9px;
+  color: #555555;
+  margin-bottom: 4px;
+}
+
+.hit-counter {
+  background: #000000;
+  color: #00ff44;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding: 4px 7px;
+  border: 2px inset #003300;
+  display: inline-block;
+  margin: 4px 0;
+}
+
+.counter-since {
+  font-size: 9px;
+  color: #777777;
+  font-style: italic;
+}
+
+/* Sidebar badges — full width, stacked */
+.status-badges {
+  margin-top: 6px;
+}
+
+.badge-88 {
+  display: block;
+  width: 100%;
+  height: 31px;
+  line-height: 31px;
+  font-size: 8px;
+  font-weight: bold;
+  border: 1px solid;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.badge-88.safari {
+  background: #336699;
+  color: #ffffff;
+  border-color: #224466;
+}
+
+.badge-88.osx {
+  background: #eeeeee;
+  color: #000000;
+  border-color: #999999;
+}
+
+/* ── MAIN CONTENT ──
+ * margin-left matches sidebar width — no float needed.
+ */
+#main-content {
+  margin-left: 162px;
+  padding: 12px 14px;
+}
+
+.content-box {
+  border: 1px solid #999999;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Box title bar — Aqua blue */
+.box-title-bar {
+  background: #5580b0;
+  padding: 4px 10px;
+}
+
+.box-title-bar span {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+.box-body {
+  padding: 12px 14px;
+  font-size: 12px;
+  line-height: 1.72;
+  color: #000000;
+}
+
+.box-body h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.box-body h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  color: #000000;
+  margin: 12px 0 5px;
+}
+
+.box-body p {
+  margin-bottom: 10px;
+}
+
+.box-body p:last-child {
+  margin-bottom: 0;
+}
+
+.box-body ul,
+.box-body ol {
+  margin: 8px 0 10px 22px;
+}
+
+.box-body li {
+  margin-bottom: 4px;
+  line-height: 1.65;
+}
+
+.box-body code {
+  background: #f0f0f0;
+  padding: 1px 4px;
+  border: 1px solid #dddddd;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+}
+
+/* Article items */
+.article-item {
+  border: 1px solid #cccccc;
+  /* Slight blue tint to match the title bar colour */
+  background: #f4f7fb;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+}
+
+.article-date {
+  font-size: 10px;
+  color: #666666;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+.article-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.article-title a {
+  color: #0033cc;
+  text-decoration: none;
+}
+
+.article-title a:hover {
+  color: #cc3300;
+  text-decoration: underline;
+}
+
+.article-excerpt {
+  font-size: 11px;
+  color: #333333;
+  line-height: 1.58;
+}
+
+/* Tags — inline-block instead of flex */
+.article-tags {
+  margin-top: 6px;
+}
+
+.tag {
+  display: inline-block;
+  background: #5580b0;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid #3a5f90;
+  margin: 0 2px 2px 0;
+}
+
+.view-all {
+  text-align: right;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+/* ── GALLERY ──
+ * Float-based grid — no display:grid (not in Safari 4/5).
+ */
+.album-grid {
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.album-card {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  background: #f9f9f9;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.album-card:hover {
+  border-color: #999999;
+}
+
+.album-thumb {
+  width: 100%;
+  height: 140px;
+  line-height: 140px;
+  background: #e0e0e0;
+  text-align: center;
+  font-size: 14px;
+  color: #aaaaaa;
+  border-bottom: 1px solid #cccccc;
+  overflow: hidden;
+  /* Real cover images set via background-image inline style */
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.album-info {
+  padding: 8px 10px;
+}
+
+.album-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.album-meta {
+  font-size: 10px;
+  color: #666666;
+  font-style: italic;
+}
+
+/* Photo grid — 3 columns via float */
+.photo-grid {
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.photo-thumb {
+  float: left;
+  width: 32%;
+  height: 120px;
+  line-height: 120px;
+  margin-right: 2%;
+  margin-bottom: 8px;
+  background: #e0e0e0;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  color: #aaaaaa;
+  /* Square thumbnail images fill the cell exactly */
+}
+
+.photo-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-thumb:hover {
+  border-color: #999999;
+}
+
+/* Photo viewer */
+.photo-viewer {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.photo-main {
+  width: 100%;
+  max-width: 560px;
+  /* Height is determined by the image, not fixed */
+  background: #e0e0e0;
+  border: 1px solid #cccccc;
+  margin: 0 auto 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.photo-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-caption {
+  font-size: 11px;
+  color: #555555;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.photo-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.photo-nav a {
+  -webkit-appearance: button;
+  appearance: button;
+  display: inline-block;
+  padding: 2px 12px;
+  margin: 0 3px;
+  font-size: 11px;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* ── FOOTER ── */
+#footer {
+  clear: both;
+  background: #cccccc;
+  border-top: 1px solid #aaaaaa;
+  padding: 8px 14px;
+  text-align: center;
+  font-size: 10px;
+  color: #333333;
+  line-height: 1.85;
+}
+
+#footer a {
+  color: #0033cc;
+  text-decoration: underline;
+}
+
+#footer a:hover {
+  color: #cc3300;
+}
+
+.footer-divider {
+  color: #888888;
+  margin: 0 5px;
+}
+
+.footer-small {
+  font-size: 9px;
+  opacity: 0.75;
+}
