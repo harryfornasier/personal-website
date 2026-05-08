@@ -145,7 +145,7 @@ cat > "photos/${ALBUM}.html" << ENDOFFILE
   <div id="header">
     <div id="header-inner">
       <div class="site-title">Harry<span>'s Site</span></div>
-      <div class="site-subtitle">writing &middot; photography &middot; projects &middot; whatever else</div>
+      <div class="site-subtitle">writing &middot; photography &middot; computers</div>
     </div>
   </div>
 
@@ -180,15 +180,6 @@ cat > "photos/${ALBUM}.html" << ENDOFFILE
         </div>
       </div>
 
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">Visitors</div>
-        <div class="sidebar-box-body" style="text-align:center;">
-          <div class="counter-label">You are visitor #</div>
-          <div class="hit-counter" id="counter">012847</div>
-          <div class="counter-since">since Jan 2006</div>
-        </div>
-      </div>
-
       <div class="status-badges">
         <div class="badge-88 safari">Best viewed in <b>Safari</b></div>
         <div class="badge-88 osx">Powered by <b>Mac OS X</b></div>
@@ -220,13 +211,13 @@ ${THUMB_GRID}
   </div><!-- /columns -->
 
   <div id="footer">
-    &copy; 2006&ndash;2024 Harry &nbsp;
+    &copy; 2026 Harry &nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="../about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="#">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="#">RSS</a>&nbsp;
+    &nbsp;<a href="../feed.xml">RSS</a>&nbsp;
     <br>
     <span class="footer-small">No cookies &middot; No tracking &middot; No nonsense</span>
   </div>
@@ -267,7 +258,7 @@ cat > "photos/${ALBUM}_photo.html" << ENDOFFILE
   <div id="header">
     <div id="header-inner">
       <div class="site-title">Harry<span>'s Site</span></div>
-      <div class="site-subtitle">writing &middot; photography &middot; projects &middot; whatever else</div>
+      <div class="site-subtitle">writing &middot; photography &middot; computers</div>
     </div>
   </div>
 
@@ -303,15 +294,6 @@ cat > "photos/${ALBUM}_photo.html" << ENDOFFILE
         <div class="sidebar-box-body">
           <a class="sidebar-link" href="pin_mill.html">Pin Mill 2025</a>
           <!-- Add new album links here -->
-        </div>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">Visitors</div>
-        <div class="sidebar-box-body" style="text-align:center;">
-          <div class="counter-label">You are visitor #</div>
-          <div class="hit-counter" id="counter">012847</div>
-          <div class="counter-since">since Jan 2006</div>
         </div>
       </div>
 
@@ -358,13 +340,13 @@ cat > "photos/${ALBUM}_photo.html" << ENDOFFILE
   </div><!-- /columns -->
 
   <div id="footer">
-    &copy; 2006&ndash;2024 Harry &nbsp;
+    &copy; 2026 Harry &nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="../about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="#">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="#">RSS</a>&nbsp;
+    &nbsp;<a href="../feed.xml">RSS</a>&nbsp;
     <br>
     <span class="footer-small">No cookies &middot; No tracking &middot; No nonsense</span>
   </div>

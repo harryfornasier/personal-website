@@ -7,6 +7,7 @@
   <meta name="keywords" content="personal site, blog, articles, photography, Mac OS X">
   <title>Harry's Site</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="alternate" type="application/rss+xml" title="Harry's Site" href="feed.xml">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <div id="header">
     <div id="header-inner">
       <div class="site-title">Harry<span>'s Site</span></div>
-      <div class="site-subtitle">writing &middot; photography &middot; projects &middot; whatever else</div>
+      <div class="site-subtitle">writing &middot; photography &middot; computers</div>
     </div>
   </div>
 
@@ -52,22 +53,32 @@
       </div>
 
       <div class="sidebar-box">
-        <div class="sidebar-box-title">Visitors</div>
-        <div class="sidebar-box-body" style="text-align:center;">
-          <div class="counter-label">You are visitor #</div>
-          <div class="hit-counter" id="counter">012847</div>
-          <div class="counter-since">since Jan 2006</div>
-        </div>
-      </div>
-
-      <div class="sidebar-box">
         <div class="sidebar-box-title">Currently</div>
         <div class="sidebar-box-body setup-list">
           <b>Reading:</b> Money: A story of Humanity<br>
           <b>Listening:</b> Will Wood<br>
           <b>OS:</b> Snow Leopard 10.6.8<br>
-          <b>Camera:</b> Pentax K1 MK II<br>
-          <b>Weather:</b> Overcast, 12&deg;C
+          <b>Camera:</b> Pentax K1 MK II
+        </div>
+      </div>
+
+      <!-- Current Mood — edit the mood word and face below -->
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Current Mood</div>
+        <div class="sidebar-box-body" style="text-align:center; padding: 6px 0;">
+          <div style="font-size:22px; line-height:1; margin-bottom:5px;">:)</div>
+          <div style="font-size:12px; font-weight:bold; color:#333;">caffeinated</div>
+        </div>
+      </div>
+
+      <!-- Site Stats — Photos/Albums are hardcoded, update when you add more -->
+      <div class="sidebar-box">
+        <div class="sidebar-box-title">Site Stats</div>
+        <div class="sidebar-box-body setup-list">
+          <b>Articles:</b> <span id="stat-articles">—</span><br>
+          <b>Photos:</b> 9<br>
+          <b>Albums:</b> 2<br>
+          <b>Online since:</b> 2026
         </div>
       </div>
 
@@ -113,13 +124,13 @@
 
   <!-- ═══ FOOTER ═══ -->
   <div id="footer">
-    &copy; 2006&ndash;2024 Harry &nbsp;
+    &copy; 2026 Harry &nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="#">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="#">RSS</a>&nbsp;
+    &nbsp;<a href="feed.xml">RSS</a>&nbsp;
     <br>
     <span class="footer-small">No cookies &middot; No tracking &middot; No nonsense</span>
   </div>
@@ -137,9 +148,16 @@
   var html = '';
   var max = Math.min(5, ARTICLES.length);
   for (var i = 0; i < max; i++) {
-    html += '<a class="sidebar-link" href="' + ARTICLES[i].href + '">' + ARTICLES[i].title + '</a>';
+    var href = ARTICLES[i].body ? 'article.html?article=' + ARTICLES[i].slug : '#';
+    html += '<a class="sidebar-link" href="' + href + '">' + ARTICLES[i].title + '</a>';
   }
   list.innerHTML = html;
+}());
+
+/* ── Site stats: article count ── */
+(function () {
+  var el = document.getElementById('stat-articles');
+  if (el && typeof ARTICLES !== 'undefined') { el.innerHTML = ARTICLES.length; }
 }());
 
 /* ── Main content: 3 most recent article cards ── */

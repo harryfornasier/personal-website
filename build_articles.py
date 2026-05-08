@@ -51,6 +51,10 @@ except ImportError:
 
 ARTICLES_DIR = "articles"
 OUTPUT_FILE  = "scripts/articles.js"
+RSS_FILE     = "feed.xml"
+
+# ── Update this to your real URL when you deploy ──────────────────────────────
+SITE_URL = "https://example.com"
 
 
 # ── .doc conversion helpers ────────────────────────────────────────────────────
@@ -337,6 +341,62 @@ def write_articles_js(articles):
         f.write(content)
 
 
+# ── RSS helpers ───────────────────────────────────────────────────────────────
+
+def xml_escape(s):
+    """Escape a string for safe embedding in XML."""
+    s = s.replace('&',  '&amp;')
+    s = s.replace('<',  '&lt;')
+    s = s.replace('>',  '&gt;')
+    s = s.replace('"',  '&quot;')
+    s = s.replace("'",  '&apos;')
+    return s
+
+
+def iso_to_rfc822(dateiso):
+    """Convert YYYY-MM-DD to RFC 822 date string required by RSS 2.0."""
+    try:
+        dt = datetime.strptime(dateiso, '%Y-%m-%d')
+        return dt.strftime('%a, %d %b %Y 00:00:00 +0000')
+    except ValueError:
+        return 'Thu, 01 Jan 1970 00:00:00 +0000'
+
+
+def write_feed_xml(articles):
+    """Write an RSS 2.0 feed to feed.xml."""
+    now = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
+
+    lines = []
+    lines.append('<?xml version="1.0" encoding="UTF-8"?>')
+    lines.append('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">')
+    lines.append('  <channel>')
+    lines.append("    <title>Harry's Site</title>")
+    lines.append('    <link>{}</link>'.format(SITE_URL))
+    lines.append('    <description>writing · photography · projects · whatever else</description>')
+    lines.append('    <language>en-gb</language>')
+    lines.append('    <lastBuildDate>{}</lastBuildDate>'.format(now))
+    lines.append('    <atom:link href="{}/feed.xml" rel="self" type="application/rss+xml"/>'.format(SITE_URL))
+    lines.append('')
+
+    published = [a for a in articles if a.get('body')]
+    for a in published:
+        url = '{}/article.html?article={}'.format(SITE_URL, a['slug'])
+        lines.append('    <item>')
+        lines.append('      <title>{}</title>'.format(xml_escape(a['title'])))
+        lines.append('      <link>{}</link>'.format(url))
+        lines.append('      <description>{}</description>'.format(xml_escape(a['excerpt'])))
+        lines.append('      <pubDate>{}</pubDate>'.format(iso_to_rfc822(a['dateiso'])))
+        lines.append('      <guid isPermaLink="true">{}</guid>'.format(url))
+        lines.append('    </item>')
+
+    lines.append('  </channel>')
+    lines.append('</rss>')
+
+    content = '\n'.join(lines) + '\n'
+    with open(RSS_FILE, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -394,8 +454,10 @@ def main():
     articles.sort(key=lambda a: a['dateiso'], reverse=True)
 
     write_articles_js(articles)
+    write_feed_xml(articles)
 
     print("\nWrote {} article(s) to {}".format(len(articles), OUTPUT_FILE))
+    print("Wrote RSS feed to {}".format(RSS_FILE))
     for a in articles:
         status = 'OK' if a['body'] else 'no body'
         print("  [{}]  {} ({})  [{}]".format(a['dateiso'], a['title'], a['slug'], status))

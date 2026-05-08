@@ -6,14 +6,15 @@
 
 var ARTICLES = [
   {
-    slug:    'running-snow-leopard-2025',
-    date:    'November 12, 2024',
-    dateiso: '2024-11-12',
-    title:   'Running Snow Leopard as a Daily Driver in 2025',
-    excerpt: 'Most people think you\'re mad for running a 2009 OS. Those people haven\'t experienced 10.6.8 on a maxed-out Core 2 Duo. It\'s fast, it\'s stable, and everything just works.',
-    tags:    ['Mac OS X', 'Snow Leopard', 'Opinion'],
-    body:    '<p>Most people think you\'re mad for running a 2009 operating system in 2025. Those people haven\'t experienced the silky smoothness of Mac OS X 10.6.8 on a maxed-out Core 2 Duo MacBook Pro.</p><p>I\'ve been using Snow Leopard as my daily driver for about three years now, and I genuinely don\'t see myself switching back to modern macOS anytime soon. Here\'s why.</p><h3>Speed &amp; Stability</h3><p>Snow Leopard is <em>fast</em>. Applications launch instantly. The system boots in under 20 seconds. There\'s no beach ball, no lag, no weird UI stutters. Everything just works immediately.</p><p>Compare that to modern macOS which feels bloated even on brand new hardware. Opening Safari shouldn\'t take 4 seconds. Switching between apps shouldn\'t have a delay. Snow Leopard proves that none of this is necessary.</p><h3>The UI Actually Makes Sense</h3><p>Classic Aqua is peak Apple design. The gel buttons, the pinstripes, the lickable interfaces — it all has character. Modern macOS is flat and boring. Everything looks the same.</p><p>But it\'s not just aesthetics. The UX is better too. Exposé is superior to Mission Control in every way. The old Dock is more intuitive. Even the menu bar looks better with a bit of translucency.</p><h3>What About Compatibility?</h3><p>This is the part where people say &quot;but modern apps won\'t run!&quot; And they\'re right, sort of.</p><p>Here\'s what still works perfectly:</p><ul><li>Safari 5.1 for browsing (most sites still work fine)</li><li>Mail.app for email</li><li>TextMate 1.5 for writing and coding</li><li>iTunes 10 for music (before it got ruined)</li><li>iWork \'09 for documents</li><li>Photoshop CS6</li></ul><p>Do I miss some modern conveniences? Sure. But I\'ve gained so much more in return — a computing experience that feels focused, fast, and genuinely pleasant to use.</p><h3>My Setup</h3><p>Running this on a 2009 MacBook Pro with 8GB RAM and an SSD. The machine is 16 years old and still feels faster than most new laptops for daily tasks. That\'s not nostalgia talking — that\'s just the reality of how lean Snow Leopard is.</p><p>I keep a modern Mac Mini around for the rare occasions I need something Snow Leopard can\'t handle. But 95% of the time? I\'m on the old MBP, and I couldn\'t be happier.</p><h3>Should You Try It?</h3><p>If you\'ve got an old Core 2 Duo Mac sitting around, absolutely. Install an SSD, max out the RAM, and give Snow Leopard a shot. You might be surprised how well it holds up.</p><p>Just don\'t expect to use it for everything. This is a deliberate choice to use older software and accept the tradeoffs. But if you value speed, stability, and a genuinely pleasant user interface? It\'s worth it.</p>'
-  }
+    slug: "running-snow-leopard-2025",
+    date: "November 12, 2024",
+    dateiso: "2024-11-12",
+    title: "Running Snow Leopard as a Daily Driver in 2025",
+    excerpt:
+      "Most people think you're mad for running a 2009 OS. Those people haven't experienced 10.6.8 on a maxed-out Core 2 Duo. It's fast, it's stable, and everything just works.",
+    tags: ["Mac OS X", "Snow Leopard", "Opinion"],
+    body: "<p>Most people think you're mad for running a 2009 operating system in 2025. Those people haven't experienced the silky smoothness of Mac OS X 10.6.8 on a maxed-out Core 2 Duo MacBook Pro.</p><p>I've been using Snow Leopard as my daily driver for about three years now, and I genuinely don't see myself switching back to modern macOS anytime soon. Here's why.</p><h3>Speed &amp; Stability</h3><p>Snow Leopard is <em>fast</em>. Applications launch instantly. The system boots in under 20 seconds. There's no beach ball, no lag, no weird UI stutters. Everything just works immediately.</p><p>Compare that to modern macOS which feels bloated even on brand new hardware. Opening Safari shouldn't take 4 seconds. Switching between apps shouldn't have a delay. Snow Leopard proves that none of this is necessary.</p><h3>The UI Actually Makes Sense</h3><p>Classic Aqua is peak Apple design. The gel buttons, the pinstripes, the lickable interfaces — it all has character. Modern macOS is flat and boring. Everything looks the same.</p><p>But it's not just aesthetics. The UX is better too. Exposé is superior to Mission Control in every way. The old Dock is more intuitive. Even the menu bar looks better with a bit of translucency.</p><h3>What About Compatibility?</h3><p>This is the part where people say &quot;but modern apps won't run!&quot; And they're right, sort of.</p><p>Here's what still works perfectly:</p><ul><li>Safari 5.1 for browsing (most sites still work fine)</li><li>Mail.app for email</li><li>TextMate 1.5 for writing and coding</li><li>iTunes 10 for music (before it got ruined)</li><li>iWork '09 for documents</li><li>Photoshop CS6</li></ul><p>Do I miss some modern conveniences? Sure. But I've gained so much more in return — a computing experience that feels focused, fast, and genuinely pleasant to use.</p><h3>My Setup</h3><p>Running this on a 2009 MacBook Pro with 8GB RAM and an SSD. The machine is 16 years old and still feels faster than most new laptops for daily tasks. That's not nostalgia talking — that's just the reality of how lean Snow Leopard is.</p><p>I keep a modern Mac Mini around for the rare occasions I need something Snow Leopard can't handle. But 95% of the time? I'm on the old MBP, and I couldn't be happier.</p><h3>Should You Try It?</h3><p>If you've got an old Core 2 Duo Mac sitting around, absolutely. Install an SSD, max out the RAM, and give Snow Leopard a shot. You might be surprised how well it holds up.</p><p>Just don't expect to use it for everything. This is a deliberate choice to use older software and accept the tradeoffs. But if you value speed, stability, and a genuinely pleasant user interface? It's worth it.</p>",
+  },
 ];
 
 /* ============================================================
@@ -21,32 +22,46 @@ var ARTICLES = [
    ============================================================ */
 
 function articleTagsHtml(tags) {
-  var html = '';
+  var html = "";
   for (var i = 0; i < tags.length; i++) {
-    html += '<span class="tag">' + tags[i] + '</span>';
+    html += '<span class="tag">' + tags[i] + "</span>";
   }
   return html;
 }
 
 function articleCardHtml(a) {
-  var href = a.body ? 'article.html?article=' + a.slug : '#';
-  return '<div class="article-item">' +
-    '<div class="article-date">' + a.date + '</div>' +
-    '<div class="article-title"><a href="' + href + '">' + a.title + '</a></div>' +
-    '<div class="article-excerpt">' + a.excerpt + '</div>' +
-    '<div class="article-tags">' + articleTagsHtml(a.tags) + '</div>' +
-    '</div>';
+  var href = a.body ? "article.html?article=" + a.slug : "#";
+  return (
+    '<div class="article-item">' +
+    '<div class="article-date">' +
+    a.date +
+    "</div>" +
+    '<div class="article-title"><a href="' +
+    href +
+    '">' +
+    a.title +
+    "</a></div>" +
+    '<div class="article-excerpt">' +
+    a.excerpt +
+    "</div>" +
+    '<div class="article-tags">' +
+    articleTagsHtml(a.tags) +
+    "</div>" +
+    "</div>"
+  );
 }
 
 /* Parse a single query-string parameter — Safari 4/5 safe */
 function getQueryParam(name) {
   var search = window.location.search;
-  if (!search || search.length < 2) { return null; }
-  var pairs = search.substring(1).split('&');
+  if (!search || search.length < 2) {
+    return null;
+  }
+  var pairs = search.substring(1).split("&");
   for (var i = 0; i < pairs.length; i++) {
-    var kv = pairs[i].split('=');
+    var kv = pairs[i].split("=");
     if (kv[0] === name) {
-      return kv.length > 1 ? decodeURIComponent(kv[1].replace(/\+/g, ' ')) : '';
+      return kv.length > 1 ? decodeURIComponent(kv[1].replace(/\+/g, " ")) : "";
     }
   }
   return null;

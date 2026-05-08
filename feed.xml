@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Harry's Site</title>
+    <link>https://example.com</link>
+    <description>writing · photography · projects · whatever else</description>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://example.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Running Snow Leopard as a Daily Driver in 2025</title>
+      <link>https://example.com/article.html?article=running-snow-leopard-2025</link>
+      <description>Most people think you&apos;re mad for running a 2009 OS. Those people haven&apos;t experienced 10.6.8 on a maxed-out Core 2 Duo. It&apos;s fast, it&apos;s stable, and everything just works.</description>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://example.com/article.html?article=running-snow-leopard-2025</guid>
+    </item>
+  </channel>
+</rss>
