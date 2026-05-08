@@ -215,7 +215,7 @@ ${THUMB_GRID}
     <span class="footer-divider">|</span>
     &nbsp;<a href="../about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="#">Contact</a>&nbsp;
+    &nbsp;<a href="mailto:fortune_plans.3n@icloud.com">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="../feed.xml">RSS</a>&nbsp;
     <br>
@@ -344,7 +344,7 @@ cat > "photos/${ALBUM}_photo.html" << ENDOFFILE
     <span class="footer-divider">|</span>
     &nbsp;<a href="../about.html">About</a>&nbsp;
     <span class="footer-divider">|</span>
-    &nbsp;<a href="#">Contact</a>&nbsp;
+    &nbsp;<a href="mailto:fortune_plans.3n@icloud.com">Contact</a>&nbsp;
     <span class="footer-divider">|</span>
     &nbsp;<a href="../feed.xml">RSS</a>&nbsp;
     <br>
