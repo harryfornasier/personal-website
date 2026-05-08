@@ -6,15 +6,14 @@
 
 var ARTICLES = [
   {
-    slug: "running-snow-leopard-2025",
-    date: "November 12, 2024",
-    dateiso: "2024-11-12",
-    title: "Running Snow Leopard as a Daily Driver in 2025",
-    excerpt:
-      "Most people think you're mad for running a 2009 OS. Those people haven't experienced 10.6.8 on a maxed-out Core 2 Duo. It's fast, it's stable, and everything just works.",
-    tags: ["Mac OS X", "Snow Leopard", "Opinion"],
-    body: "<p>Most people think you're mad for running a 2009 operating system in 2025. Those people haven't experienced the silky smoothness of Mac OS X 10.6.8 on a maxed-out Core 2 Duo MacBook Pro.</p><p>I've been using Snow Leopard as my daily driver for about three years now, and I genuinely don't see myself switching back to modern macOS anytime soon. Here's why.</p><h3>Speed &amp; Stability</h3><p>Snow Leopard is <em>fast</em>. Applications launch instantly. The system boots in under 20 seconds. There's no beach ball, no lag, no weird UI stutters. Everything just works immediately.</p><p>Compare that to modern macOS which feels bloated even on brand new hardware. Opening Safari shouldn't take 4 seconds. Switching between apps shouldn't have a delay. Snow Leopard proves that none of this is necessary.</p><h3>The UI Actually Makes Sense</h3><p>Classic Aqua is peak Apple design. The gel buttons, the pinstripes, the lickable interfaces — it all has character. Modern macOS is flat and boring. Everything looks the same.</p><p>But it's not just aesthetics. The UX is better too. Exposé is superior to Mission Control in every way. The old Dock is more intuitive. Even the menu bar looks better with a bit of translucency.</p><h3>What About Compatibility?</h3><p>This is the part where people say &quot;but modern apps won't run!&quot; And they're right, sort of.</p><p>Here's what still works perfectly:</p><ul><li>Safari 5.1 for browsing (most sites still work fine)</li><li>Mail.app for email</li><li>TextMate 1.5 for writing and coding</li><li>iTunes 10 for music (before it got ruined)</li><li>iWork '09 for documents</li><li>Photoshop CS6</li></ul><p>Do I miss some modern conveniences? Sure. But I've gained so much more in return — a computing experience that feels focused, fast, and genuinely pleasant to use.</p><h3>My Setup</h3><p>Running this on a 2009 MacBook Pro with 8GB RAM and an SSD. The machine is 16 years old and still feels faster than most new laptops for daily tasks. That's not nostalgia talking — that's just the reality of how lean Snow Leopard is.</p><p>I keep a modern Mac Mini around for the rare occasions I need something Snow Leopard can't handle. But 95% of the time? I'm on the old MBP, and I couldn't be happier.</p><h3>Should You Try It?</h3><p>If you've got an old Core 2 Duo Mac sitting around, absolutely. Install an SSD, max out the RAM, and give Snow Leopard a shot. You might be surprised how well it holds up.</p><p>Just don't expect to use it for everything. This is a deliberate choice to use older software and accept the tradeoffs. But if you value speed, stability, and a genuinely pleasant user interface? It's worth it.</p>",
-  },
+    slug:    'plan-for-daily-driving-snow-leopard-in-2026',
+    date:    '08 May, 2026',
+    dateiso: '1970-01-01',
+    title:   'Plan for daily driving snow leopard in 2026',
+    excerpt: 'I think a lot of Apple fans would agree with me that Apple has somewhat lost its way with recent Mac OS releases. Now I’m not a complete liquid glass hater, I actually quite enjoy the effect on iOS, I think it works well there, but that’s all it is – just an effect. Apple seemingly went on about how this was a revolutionary change to their design and I agree it is cool but wow did it end up being underwhelming.',
+    tags:    ['Mac OS X', 'Snow Leopard', 'Opinion'],
+    body:    '<p>On Mac OS I think the unification of iOS and Mac OS is where the cracks begin to show. It feels like liquid glass was an after thought for Mac OS like it was implemented in a rushed way. Either way I digress, this was supposed to be an article about my plan for Daily Driving Snow Leopard. Maybe like everyone else has I’ll write a post taking a dump on liquid glass too, because no ones done that yet.</p><h3>Why Snow Leopard?</h3><p>A lot of people talk about this release as though it was the best release Apple ever put out. Now I don’t actually have a lot of memory of having used this OS. From what I remember my family had an intel iMac and MacBook which both used Tiger. So I don’t think I have the same rose-tinted glasses when it comes to this release. But what I can see is that this was a very stable OS and the design changed fundamentally between Snow Leopard and Lion. And if you’re using a computer that runs Lion, you may as well upgrade to Mavericks if it supports it as the design differences between Mavericks and Lion are quite small.</p><p>I love the classic Aqua design that Snow Leopard has – I remember going on a friend’s parents iMac as a kid and seeing the space wallpaper made me feel like this computer was the future. It’s what I want to see whenever I open up my computer, it just brings me joy to use.</p><p>What additionally prompted me to give this a go was the release of PowerFox. I had previously looked at daily driving Snow Leopard a couple years ago and decided it wouldn’t work for me because of my heavy web app use and the limited browser selection. There was InterWeb, but at the time when I tried it it had too many compatibility issues with websites I had to use. </p><p>I brought an old 2008 MacBook with Snow Leopard on it on holiday with me for a week while skiing to see how it would go. I honestly ran into zero problems using PowerFox on it. Every website I wanted to go on worked. I’m sure going forward I will run into issues but I’ll figure that out when I get to it. </p><p>Overall I just like the challenge of seeing if I can.</p><h3>Apps</h3><p>Here\'s my plan for what I\'ll install and get working first. I\'m sure my list will change as it goes on.</p><ul><li>PowerFox</li><li>Mail.app for email</li><li>Word 2011</li><li>iTunes 10 for music</li><li>iPhoto</li></ul><h3>Issues</h3><p>I can already predict some issues I’m going to run into before I start. Here are just some of them</p><p>Music Streaming – Spotify will not work</p><p>iCloud – I use iCloud for saving all my data between devices, I’m going to have to find an alternative for some like calendar, notes,</p><p>iMessage – I use iMessage on my mac constantly so this will be sorely missed </p><p>Airdrop/handoff – always using these between my mac and my iPhone but when I daily drove mavericks I got quite used to using PairDrop</p><p>Video formats – there are plugins for quicktime that let you watch VP9 and H265 video. If that doesn’t work I’ll try VLC</p><p>Photo formats – Wowfunhappy wrote a SIMBL plugin for preview – I’ll see if this works</p><h3>Why not Mavericks again?</h3><p>Mainly, I want the challenge of seeing if I could use Snow leopard. But there are tons of benefits of going with Mavericks over Snow Leopard. </p><p>For one the hardware is simply better, you can pick up an early 2014 MacBook Pro with a retina display. You can also run Mavericks on a 2013 Mac Pro, which is what I did and it still holds up to this day for performance.</p><p>You can login to iCloud and have working iMessage! This unfortunately would not work for me as I turned on advanced data protection to encrypt my iCloud data and Mavericks doesn’t support this.</p><p>Better app selection. Mavericks is much newer and has the app store on it, so there are lots of apps that if you have purchased it’ll let you download the last working version for Mavericks. </p><p>If this sounds better to you, take a look at http://mavericksforever.com/ which has very detailed instructions on how best to setup Mavericks.</p>'
+  }
 ];
 
 /* ============================================================
@@ -22,46 +21,32 @@ var ARTICLES = [
    ============================================================ */
 
 function articleTagsHtml(tags) {
-  var html = "";
+  var html = '';
   for (var i = 0; i < tags.length; i++) {
-    html += '<span class="tag">' + tags[i] + "</span>";
+    html += '<span class="tag">' + tags[i] + '</span>';
   }
   return html;
 }
 
 function articleCardHtml(a) {
-  var href = a.body ? "article.html?article=" + a.slug : "#";
-  return (
-    '<div class="article-item">' +
-    '<div class="article-date">' +
-    a.date +
-    "</div>" +
-    '<div class="article-title"><a href="' +
-    href +
-    '">' +
-    a.title +
-    "</a></div>" +
-    '<div class="article-excerpt">' +
-    a.excerpt +
-    "</div>" +
-    '<div class="article-tags">' +
-    articleTagsHtml(a.tags) +
-    "</div>" +
-    "</div>"
-  );
+  var href = a.body ? 'article.html?article=' + a.slug : '#';
+  return '<div class="article-item">' +
+    '<div class="article-date">' + a.date + '</div>' +
+    '<div class="article-title"><a href="' + href + '">' + a.title + '</a></div>' +
+    '<div class="article-excerpt">' + a.excerpt + '</div>' +
+    '<div class="article-tags">' + articleTagsHtml(a.tags) + '</div>' +
+    '</div>';
 }
 
 /* Parse a single query-string parameter — Safari 4/5 safe */
 function getQueryParam(name) {
   var search = window.location.search;
-  if (!search || search.length < 2) {
-    return null;
-  }
-  var pairs = search.substring(1).split("&");
+  if (!search || search.length < 2) { return null; }
+  var pairs = search.substring(1).split('&');
   for (var i = 0; i < pairs.length; i++) {
-    var kv = pairs[i].split("=");
+    var kv = pairs[i].split('=');
     if (kv[0] === name) {
-      return kv.length > 1 ? decodeURIComponent(kv[1].replace(/\+/g, " ")) : "";
+      return kv.length > 1 ? decodeURIComponent(kv[1].replace(/\+/g, ' ')) : '';
     }
   }
   return null;

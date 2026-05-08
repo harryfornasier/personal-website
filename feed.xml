@@ -5,15 +5,15 @@
     <link>https://example.com</link>
     <description>writing · photography · projects · whatever else</description>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 08 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2026 08:47:45 +0000</lastBuildDate>
     <atom:link href="https://example.com/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>Running Snow Leopard as a Daily Driver in 2025</title>
-      <link>https://example.com/article.html?article=running-snow-leopard-2025</link>
-      <description>Most people think you&apos;re mad for running a 2009 OS. Those people haven&apos;t experienced 10.6.8 on a maxed-out Core 2 Duo. It&apos;s fast, it&apos;s stable, and everything just works.</description>
-      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
-      <guid isPermaLink="true">https://example.com/article.html?article=running-snow-leopard-2025</guid>
+      <title>Plan for daily driving snow leopard in 2026</title>
+      <link>https://example.com/article.html?article=plan-for-daily-driving-snow-leopard-in-2026</link>
+      <description>I think a lot of Apple fans would agree with me that Apple has somewhat lost its way with recent Mac OS releases. Now I’m not a complete liquid glass hater, I actually quite enjoy the effect on iOS, I think it works well there, but that’s all it is – just an effect. Apple seemingly went on about how this was a revolutionary change to their design and I agree it is cool but wow did it end up being underwhelming.</description>
+      <pubDate>Thu, 01 Jan 1970 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://example.com/article.html?article=plan-for-daily-driving-snow-leopard-in-2026</guid>
     </item>
   </channel>
 </rss>
